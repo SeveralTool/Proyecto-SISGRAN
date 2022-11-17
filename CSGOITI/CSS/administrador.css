@@ -1,0 +1,466 @@
+* {
+  border: px solid black;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  overflow-x: hidden;
+}
+
+h3{
+  margin-top: 10px;
+}
+
+.grid-body {
+  display: inline-flex;
+  width: 100%;
+  height: 100%;
+}
+
+.titulo {
+  display: flex;
+  width: 100%;
+  color: rgb(180, 16, 16);
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#clientes-admin h3{
+    text-align: left;
+}
+
+.contenedor-main {
+  display: flex;
+  width: 80%;
+  height: 99%;
+  position: absolute;
+  margin: 0 10px 0 10px;
+  left: 21%;
+  right: 100px;
+  background-color: rgba(5, 5, 5, 0);
+}
+
+.logo-admin {
+  width: 100%;
+  height: 100px;
+  display: block;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.titulo-admin {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.stats {
+  display: flex;
+  width: 100%;
+  height: 60px;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 5px;
+  margin-bottom: 50px;
+  background-color: rgba(127, 255, 212, 0);
+}
+
+.stats div {
+  display: grid;
+  border-radius: 5px;
+  width: max-content;
+  height: 40px;
+  grid-template-columns: 0.5fr 1fr;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(13, 3, 51, 0);
+  border: 3px solid rgb(0, 0, 0);
+  color: #000000;
+  padding: 10px;
+}
+
+.stats div i {
+  font-size: 40px;
+}
+
+.stats-huertas {
+  display: flex;
+  width: 13%;
+  height: max-content;
+  grid-template-columns: repeat(1, 1fr);
+  column-gap: 5px;
+  margin-bottom: 50px;
+  border: 3px solid black;
+  border-radius: 0.5rem;
+}
+
+.stats-huertas p {
+  display: block;
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-color: rgba(13, 3, 51, 0);
+  color: #000000;
+  padding: 10px;
+}
+
+img {
+  width: 200px;
+  height: 100px;
+  margin: auto;
+}
+
+.empresa {
+  display: none;
+}
+
+.selector-admin {
+  display: block;
+  width: 100%;
+  height: max-content;
+  background-color: rgba(255, 255, 255, 0);
+  text-align: center;
+}
+
+#pedidos-admin {
+  display: none;
+}
+
+#huertas-admin {
+  display: none;
+}
+
+#btn-clientes {
+  color: red;
+}
+#btn-web {
+  color: red;
+}
+
+.boton-sel-1 {
+  width: 100px;
+  height: max-content;
+  text-decoration: none;
+  list-style: none;
+  background-color: rgba(255, 255, 255, 0);
+  border: 3px solid rgb(0, 0, 0);
+  border-radius: 0.5rem;
+  padding: 5px;
+  margin: 5px;
+}
+
+.boton-sel-1:hover {
+  cursor: pointer;
+  color: red;
+}
+
+.fila {
+  display: grid;
+  grid-template-columns: 0.5fr 1.5fr 1fr 0.5fr 0.5fr 1fr 0.5fr 0.5fr 0.5fr;
+  grid-template-rows: 40px;
+  row-gap: 3px;
+  justify-content: center;
+  align-items: center;
+  column-gap: 3px;
+}
+
+.fila p {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(175, 175, 175);
+  border-radius: 0.5rem;
+}
+
+.datos {
+  display: grid;
+  grid-template-columns: 0.5fr 1.5fr 1fr 0.5fr 0.5fr 1fr 0.5fr 0.5fr 0.5fr;
+  grid-template-rows: repeat(1, 50px);
+  border-bottom: 0px double rgba(187, 186, 186, 0);
+  border-radius: 5px;
+  align-items: center;
+  column-gap: 1px;
+}
+
+.datos p {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  background-color: #f7f7f700;
+}
+
+.datos:hover {
+  background-color: rgba(119, 119, 119, 0.13);
+}
+
+.datos-empresa:hover {
+  background-color: rgba(119, 119, 119, 0.13);
+}
+
+.datos-huertas:hover {
+  background-color: rgba(119, 119, 119, 0.13);
+}
+
+.fila-empresa {
+  display: grid;
+  grid-template-columns: 0.5fr 1.5fr 1fr 0.5fr 1fr 0.5fr 0.5fr 0.5fr;
+  grid-template-rows: repeat(1, 40px);
+  justify-content: center;
+  align-items: center;
+  column-gap: 3px;
+}
+
+.fila-empresa p {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(175, 175, 175);
+  border-radius: 0.5rem;
+}
+
+.datos-empresa {
+  display: grid;
+  grid-template-columns: 0.5fr 1.5fr 1fr 0.5fr 1fr 0.5fr 0.5fr 0.5fr;
+  grid-template-rows: repeat(1, 50px);
+  border-radius: 5px;
+  align-items: center;
+  align-items: center;
+}
+
+.datos-empresa p {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.fila-huerta {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 0.5fr 1.5fr 1fr 0.5fr;
+  grid-template-rows: 40px;
+  column-gap: 3px;
+}
+
+.fila-huerta p {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(175, 175, 175);
+  border-radius: 0.5rem;
+}
+
+.datos-huertas {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 0.5fr 1.5fr 1fr 0.5fr;
+  grid-template-rows: repeat(1, 50px);
+
+  align-items: center;
+  align-items: center;
+}
+
+.datos-huertas p {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.botones {
+  display: flex;
+  justify-content: left;
+  align-items: left;
+}
+
+.a-boton-Accept {
+  display: flex;
+  width: 1fr;
+  height: max-content;
+  text-decoration: none;
+  background-color: rgba(3, 71, 3, 0);
+  border: 3px solid green;
+  border-radius: 10px;
+  padding: 3px;
+  margin: 3px;
+}
+
+.a-boton-Accept:hover {
+  cursor: pointer;
+  transition: all 0.3s;
+  background-color: rgb(135, 189, 135);
+}
+
+.a-boton-Decline {
+  display: flex;
+  width: 1fr;
+  height: max-content;
+  text-decoration: none;
+  background-color: rgba(170, 6, 6, 0);
+  border: 3px solid red;
+  border-radius: 10px;
+  padding: 3px;
+  margin: 3px;
+}
+
+.a-boton-Decline:hover {
+  cursor: pointer;
+  transition: all 0.3s;
+  background-color: rgb(189, 142, 142);
+}
+
+.a-boton-Accept i {
+  color: green;
+}
+
+.a-boton-Decline i {
+  color: red;
+}
+
+.fila-pedidos {
+  display: grid;
+  grid-template-columns: 0.2fr 0.2fr 1fr 0.3fr 0.5fr 0.3fr 0.3fr;
+  grid-template-rows: 40px;
+  justify-content: center;
+  align-items: center;
+  column-gap: 5px;
+  margin-bottom: 10px;
+}
+
+.fila-pedidos p {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(175, 175, 175);
+  border-radius: 0.5rem;
+}
+
+#pedidos {
+  width: 100%;
+  height: 100%;
+}
+
+.datos-pedidos {
+  display: grid;
+  grid-template-columns: 0.2fr 0.2fr 1fr 0.3fr 0.5fr 0.3fr 0.3fr;
+  grid-template-rows: 50px;
+  justify-content: center;
+  align-items: center;
+  column-gap: 5px;
+  row-gap: 5px;
+  background-color: rgba(255, 228, 196, 0);
+}
+
+.datos-pedidos:hover {
+  background-color: rgba(77, 77, 77, 0.192);
+}
+
+.datos-pedidos p {
+  text-align: center;
+}
+
+.view-items {
+  width: max-content;
+  color: rgb(255, 94, 1);
+  border-bottom: 1px solid black;
+}
+
+.view-items:hover {
+  cursor: pointer;
+}
+
+.datos-pedidos button {
+  width: 80%;
+  height: 80%;
+  border-radius: 0.5rem;
+  background-color: rgba(255, 68, 0, 0.836);
+  border: none;
+  color: #000;
+}
+
+.datos-pedidos button:hover {
+  cursor: pointer;
+}
+
+.datos-pedidos button i {
+  color: black;
+  margin-right: 5px;
+  font-size: 20px;
+}
+
+#items-container {
+  z-index: 100;
+  position: absolute;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.836);
+  justify-content: center;
+  align-items: center;
+}
+
+.items-box {
+  width: 500px;
+  height: max-content;
+  max-height: 300px;
+  overflow-y: scroll;
+  padding: 10px;
+  position: fixed;
+  top: 100px;
+  overflow-y: scroll;
+  display: grid;
+  padding-top: 15px;
+  background-color: rgb(255, 255, 255);
+  grid-template-columns: 50px 1fr 0.2fr;
+  grid-template-rows: max-content;
+  justify-content: center;
+  align-items: center;
+  -webkit-box-shadow: 0px 0px 11px 4px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 11px 4px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 11px 4px rgba(0, 0, 0, 0.75);
+}
+
+#items-close {
+  position: absolute;
+  top: 10px;
+  right: 30px;
+  font-size: 40px;
+  color: #000;
+}
+
+#item-close:hover {
+  cursor: pointer;
+}
+
+.items-box img {
+  width: 50px;
+  height: 50px;
+}
+
+.items-box p {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

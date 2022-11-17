@@ -1,0 +1,238 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+/*VENTAS*/
+
+.misVentas-container {
+  display: none;
+}
+
+.ventas-container {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.ventas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: max-content;
+  background-color: rgba(0, 255, 255, 0);
+}
+
+.ventas-form {
+  display: grid;
+  width: 80%;
+  height: max-content;
+  grid-template-columns: 1fr 0.5fr 0.3fr;
+  grid-template-rows: 1fr;
+  background-color: rgba(235, 135, 4, 0);
+  justify-content: center;
+  column-gap: 20px;
+  padding: 30px;
+}
+
+.producto {
+  width: 130px;
+  height: 130px;
+  background-color: rgba(165, 42, 42, 0);
+  margin: auto;
+}
+
+#stock {
+  display: flex;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 130px 50px 50px 50px 50px;
+  column-gap: 5px;
+  row-gap: 15px;
+}
+
+.form select {
+  color: #000;
+  border: 1px solid black;
+  list-style: none;
+  outline: 0;
+}
+
+.form select:hover {
+  cursor: pointer;
+}
+
+.form select option {
+  height: 51px;
+  font-size: 15px;
+  border: none;
+  list-style: none;
+}
+
+.form select option:hover {
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.form input {
+  width: 70px;
+  border: none;
+  font-size: 20px;
+  outline: 0;
+  margin: auto;
+  padding-left: 3px;
+  border: 1px SOLID black;
+}
+
+.can {
+  display: flex;
+}
+
+.can p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#foto-vegetal {
+  width: 100%;
+  height: 110px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  border-radius: 1rem;
+}
+
+.compra {
+  display: grid;
+  grid-template-rows: 130px repeat(4, 50px);
+  background-color: rgba(0, 0, 255, 0);
+  row-gap: 15px;
+  justify-content: center;
+}
+
+.compra p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+
+.compra input {
+  font-size: 20px;
+  padding: 0;
+  padding-left: 3px;
+}
+
+.info {
+  display: grid;
+  grid-template-rows: 130px repeat(4, 50px);
+  background-color: rgba(0, 0, 255, 0);
+  row-gap: 15px;
+  justify-content: left;
+  align-items: center;
+}
+
+button {
+  border: none;
+  background-color: rgba(111, 252, 76, 0.863);
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+#enviar-compra i {
+  margin-right: 3px;
+}
+
+#end-compra i {
+  margin-right: 3px;
+}
+
+#precio-total {
+  color: rgb(53, 206, 53);
+}
+
+#cambio {
+  color: blue;
+}
+
+/* MIS VENTAS */
+.misVentas-container {
+  width: 100%;
+  height: 100%;
+}
+
+.misVentas {
+  width: 80%;
+  height: max-content;
+  background-color: rgba(127, 255, 212, 0);
+  margin: auto;
+}
+
+.info-ventas {
+  display: grid;
+  grid-template-columns: 1fr 0.3fr 0.3fr;
+  grid-template-rows: 50px;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(223, 223, 223);
+  column-gap: 10px;
+}
+
+.info-ventas p {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.productos {
+  display: grid;
+  grid-template-columns: 1fr 0.3fr 0.3fr;
+  grid-template-rows: max-content;
+  justify-content: center;
+  align-items: center;
+  row-gap: 10px;
+  column-gap: 10px;
+}
+
+.prod {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.nombre {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.cantidad {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.unidad {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.foto {
+  width: 60px;
+  height: 60px;
+}
+
+.foto img {
+  width: 60px;
+  height: 60px;
+}

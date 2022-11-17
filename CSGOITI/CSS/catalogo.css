@@ -1,0 +1,313 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+}
+
+.menu-container {
+  position: relative;
+}
+
+/*catalogo*/
+
+.div-banner {
+  width: 100%;
+  height: 300px;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  justify-content: center;
+  align-items: center;
+background-image: url('../Imagenes/inicio.jpg'); 
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+
+}
+
+.p-divs {
+  width: 100%;
+  color: #fff;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  position: absolute;
+  margin: auto;
+  text-align: center;
+  font-size: 50px;
+  font-weight: bolder;
+  z-index: 10;
+}
+
+.img-divs {
+  --webkit-animation: linear infinite
+  transition: ease-in 300ms;
+  cursor: pointer;
+  width: 1fr;
+  height: 100%;
+  max-height: 100%;
+  backdrop-filter: blur(5px);
+  z-index: 15;
+}
+
+.img-divs:hover{
+  backdrop-filter: blur(0px)!important;
+}
+
+.box-1 {
+  display: grid;
+  width: 100%;
+  height: 1fr;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(max-content, 250px);
+  justify-items: center;
+  row-gap: 50px;
+  column-gap: 30px;
+  padding: 5px;
+  margin-top: 100px;
+}
+
+.box-img-ofertas {
+  width: 100%;
+  max-width: 350px;
+  height: 450px;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.box-img-ofertas:hover > .nom-fruta {
+  transition: left 1000ms;
+  border-bottom: 1px solid black;
+}
+
+.img-oferta {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+}
+
+.descuento {
+  display: flex;
+  clip-path: polygon(25% 0, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+  background-color: chartreuse;
+  transform: rotate(-90deg);
+  position: absolute;
+  text-align: center;
+  width: 100px;
+  height: 30px;
+  justify-content: center;
+}
+
+.p-descuento {
+  font-size: 15px;
+  width: 100%;
+  height: max-content;
+  margin: auto;
+  text-align: center;
+}
+
+.LIMITE {
+  padding-left: 45px;
+  font-size: 15px;
+  z-index: 10 !important;
+}
+
+.nom-fruta {
+  width: max-content;
+  margin: auto;
+  font-size: 150%;
+  border-bottom: 1px solid transparent;
+}
+
+.precio-anterior {
+  color: rgb(255, 0, 0);
+}
+
+.precio {
+  color: rgb(46, 107, 17);
+  font-size: 20px;
+}
+
+#stock {
+  color: grey;
+}
+
+.cantidad {
+  display: flex;
+  width: 100%;
+  height: max-content;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+#cantidad-compra {
+  width: 60px;
+  height: 30px;
+  background-color: transparent;
+  border-radius: 10px;
+  text-decoration: none;
+  text-align: center;
+  list-style: none;
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.cantidad i {
+  color: black;
+  margin: 5px;
+  font-size: 20px;
+}
+
+#cantidad-compra:hover {
+  cursor: text;
+}
+
+.boton {
+  width: max-content;
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.a-boton {
+  transition: 200ms;
+  width: 150px;
+  height: 30px;
+  padding: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background-color: #99ce1fb2;
+}
+
+.check-producto{
+  transition: all 500ms;
+  color: #000;
+  font-size: 20px;
+}
+
+.a-boton:hover {
+  transition: 200ms;
+  background-color: #99ce1f;
+  cursor: pointer;
+}
+
+.a-boton i {
+  color: black;
+}
+
+.box-img-ofertas a i {
+  color: black;
+}
+
+.box-img-ofertas a i:hover {
+  color: black;
+}
+
+/*BUSCADOR*/
+.buscador button {
+  border: none;
+  background: none;
+  color: #c70000;
+}
+
+.buscador {
+  --timing: 0.3s;
+  --width-of-input: 300px;
+  --height-of-input: 40px;
+  --border-height: 2px;
+  --input-bg: rgba(0, 0, 0, 0);
+  --border-color: #99ce1f;
+  --border-radius: 30px;
+  --after-border-radius: 0px;
+  position: relative;
+  width: var(--width-of-input);
+  height: var(--height-of-input);
+  display: flex;
+  align-items: center;
+  padding-inline: 0.8em;
+  border-radius: var(--border-radius);
+  transition: border-radius 0.5s ease;
+  background: var(--input-bg, rgba(255, 255, 255, 0));
+  right: 0;
+  margin: auto;
+  color: red;
+  margin-right: 10px;
+}
+
+.input {
+  font-size: 1rem;
+  background-color: rgba(0, 0, 0, 0);
+  width: 100%;
+  height: 100%;
+  padding-inline: 0.5em;
+  padding-block: 0.7em;
+  border: none;
+  color: black;
+  cursor: text;
+}
+
+.buscador:before {
+  content: "";
+  position: absolute;
+  background: var(--border-color);
+  transform: scaleX(0);
+  transform-origin: center;
+  width: 100%;
+  height: var(--border-height);
+  left: 0;
+  bottom: 0;
+  border-bottom: 2px solid #99ce1f;
+  border-radius: 1px solid var(--border-color);
+  transition: transform var(--timing) ease;
+  background-color: transparent;
+}
+
+.buscador:focus-within {
+  border-radius: var(--after-border-radius);
+}
+
+.input:focus {
+  outline: none;
+}
+
+.buscador:focus-within:before {
+  transform: scale(1);
+}
+
+svg {
+  color: #99ce1f;
+}
+
+.buscador svg {
+  width: 17px;
+  margin-top: 3px;
+}
+/*FIN BUSCADOR*/
+
+/*FIN catalogo*/
+
+/*RESPONSIVE*/
+
+@media screen and (max-width: 930px) {
+  .box-1 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .box-1 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .box-1 {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

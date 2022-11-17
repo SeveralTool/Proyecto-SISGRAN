@@ -1,0 +1,572 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: verdana;
+  cursor: default;
+  scroll-behavior: smooth;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  width: auto;
+  height: auto;
+  overflow-x: hidden;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+/*CARRUSEL INICIO*/
+
+.txt-carrusel {
+  position: absolute;
+  top: 40%;
+  left: 25%;
+  font-size: 100px;
+}
+
+.inicio {
+  display: block;
+  width: 100%;
+  height: max-content;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  z-index: -10;
+}
+
+.carrusel-inicio {
+  display: flex;
+  width: 500%;
+  max-height: max-content;
+  margin-left: -100%;
+}
+
+.carrusel-section {
+  width: 100%;
+  border-radius: 50px;
+}
+
+.carrusel-img {
+  display: block;
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  background-position: center;
+  background-size: cover;
+}
+
+.boton-carrusel {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: rgb(254, 254, 255);
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 50%;
+  padding-top: 6px;
+}
+
+.boton-carrusel:hover {
+  transition: 300ms;
+  color: #fff;
+  background-color: black;
+}
+
+.btn-left {
+  display: none;
+  left: 10px;
+}
+
+.btn-right {
+  display: none;
+  right: 10px;
+}
+
+.btn-down {
+  width: 120px;
+  height: 120px;
+  display: grid;
+  grid-template-rows: repeat(2, 0.5fr);
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 10000;
+  bottom: 40px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+  padding: 15px;
+  border-radius: 10rem;
+}
+
+.btn-down p {
+  font-size: 20px;
+  color: #56ab2f;
+  margin-top: 5px;
+}
+
+.btn-down i {
+  font-size: 50px;
+  animation-name: none-boton;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+}
+
+@keyframes none-boton {
+  0% {
+    transition: all 1s;
+    color: black;
+    transform: translateY(-3px);
+  }
+
+  50% {
+    transition: all 1s;
+    color: white;
+    transform: translateY(2px);
+  }
+
+  100% {
+    transition: all 1s;
+    color: black;
+    transform: translateY(-3px);
+  }
+}
+
+/*FIN CARRUSEL INICIO*/
+
+/* OFERTAS*/
+
+.div-banner {
+  width: 100%;
+  height: max-content;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  text-align: center;
+}
+
+.p-banner {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.box-1 {
+  display: grid;
+  width: 100%;
+  height: max-content;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(max-content, 250px);
+  justify-items: center;
+  row-gap: 50px;
+  column-gap: 30px;
+  padding: 5px;
+}
+
+.box-img-ofertas {
+  width: 100%;
+  max-width: 350px;
+  height: max-content;
+  text-align: center;
+  border-radius: 20px;
+  padding-bottom: 10px;
+}
+
+.box-img-ofertas:hover > .nom-fruta {
+  transition: left 1000ms;
+  border-bottom: 1px solid black;
+}
+
+.img-oferta {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+}
+
+.descuento {
+  display: flex;
+  clip-path: polygon(25% 0, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+  background-color: #99ce1f;
+  transform: rotate(-90deg);
+  position: relative;
+  text-align: center;
+  width: 100px;
+  height: 30px;
+  justify-content: center;
+  border-radius: 5rem;
+  z-index: 7;
+}
+
+.p-descuento {
+  font-size: 15px;
+  width: 100%;
+  height: max-content;
+  margin: auto;
+  text-align: center;
+}
+
+.LIMITE {
+  padding-left: 45px;
+  font-size: 15px;
+  z-index: 10 !important;
+}
+
+.nom-fruta {
+  width: max-content;
+  margin: auto;
+  font-size: 150%;
+  border-bottom: 1px solid transparent;
+}
+
+.precio-anterior {
+  font-size: 16px;
+  color: rgba(255, 0, 0, 0.644);
+}
+
+.precio {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif !important;
+  color: rgb(46, 107, 17);
+  font-size: 18px;
+}
+
+#stock {
+  color: grey;
+}
+
+.cantidad {
+  display: flex;
+  width: 100%;
+  height: max-content;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+#cantidad-compra {
+  width: 60px;
+  height: 30px;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 10px;
+  text-decoration: none;
+  background-color: transparent;
+  text-align: center;
+  list-style: none;
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.boton {
+  width: max-content;
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.a-boton {
+  transition: 200ms;
+  width: 150px;
+  height: 30px;
+  padding: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background-color: #99ce1fb2;
+}
+
+.a-boton:hover {
+  transition: 200ms;
+  background-color: #99ce1f;
+  cursor: pointer;
+}
+
+.check-producto{
+  transition: all 500ms;
+  color: #000;
+  font-size: 20px;
+}
+
+
+/*IMG PAGOS*/
+
+.pago-container {
+  display: block;
+  width: 100%;
+  height: 300px;
+  margin: 10% 0;
+  text-align: center;
+}
+
+.p-pago {
+  font-size: 4vh;
+  font-weight: bold;
+  animation-name: pago;
+  animation-duration: 4s;
+  animation-fill-mode: backwards;
+  animation-iteration-count: infinite;
+}
+
+.pago-container img {
+  width: 70%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.box-2 {
+  background-color: rgba(255, 228, 196, 0);
+  display: grid;
+  position: relative;
+  grid-template-columns: 1, 100%;
+  grid-template-rows: repeat(3, max-content);
+  justify-content: center;
+  align-items: center;
+  row-gap: 50px;
+  padding: 25px 0;
+  margin-bottom: 100px;
+  z-index: 12;
+}
+
+.an {
+  border-radius: 0%;
+  position: absolute !important;
+  z-index: -10;
+  background: #56ab2f; /* fallback for old browsers */
+  
+}
+
+.anim1 {
+  width: 100px!important;
+  height: 100px!important;
+  background: transparent;
+  top: 0;
+  left: 10%;
+  animation-name: animacion1;
+  animation-duration: 80s;
+  animation-timing-function: ease-in;
+  animation-fill-mode: backwards;
+  animation-iteration-count: infinite;
+}
+
+.anim2 {
+  width: 150px!important;
+  height: 150px!important;
+  background: transparent;
+  top: 30%;
+  bottom: 70%;
+  left: 20%;
+  animation-name: animacion2;
+  animation-duration: 40s;
+  animation-timing-function: ease-in;
+  animation-fill-mode: backwards;
+  animation-iteration-count: infinite;
+}
+
+.anim3 {
+  width: 100px!important;
+  height: 100px!important;
+  bottom: 10%;
+  right: 20%;
+  background: transparent;
+  animation-name: animacion3;
+  animation-duration: 50s;
+  animation-timing-function: ease-in;
+  animation-fill-mode: backwards;
+  animation-iteration-count: infinite;
+}
+
+.anim5 {
+  width: 50px!important;
+  height: 50px!important;
+  top: 40%;
+  left: 60%;
+  background: transparent;
+
+  animation-name: scale;
+  animation-duration: 15s;
+  animation-timing-function: ease-in;
+  animation-fill-mode: backwards;
+  animation-iteration-count: infinite;
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes animacion1 {
+  0% {
+    transform: translate(100px1, 10%);
+  }
+  20% {
+    transform: translate(200px, -30%);
+  }
+  40% {
+    transform: translateX(500px);
+  }
+  60% {
+    transform: translateY(-20%);
+  }
+  80% {
+    transform: translate(150px, 10%);
+  }
+  100% {
+    transform: translate(-70%, 10%);
+  }
+}
+
+@keyframes animacion2 {
+  0% {
+    transform: translate(-10%, -10%);
+  }
+  20% {
+    transform: translate(20%, 30%);
+  }
+  40% {
+    transform: translateX(-15%);
+  }
+  60% {
+    transform: translateY(20%);
+  }
+  80% {
+    transform: translate(-15%, 20%);
+  }
+  100% {
+    transform: translate(-15%, -20%);
+  }
+}
+
+@keyframes animacion3 {
+  0% {
+    transform: translate(10%, 10%);
+  }
+  20% {
+    transform: translate(-20%, -30%);
+  }
+  40% {
+    transform: translateX(-150%);
+  }
+  60% {
+    transform: translateY(-20%);
+  }
+  80% {
+    transform: translate(15%, 10%);
+  }
+  100% {
+    transform: translate(40%, 10%);
+  }
+}
+
+.almacen-responsive {
+  display: none;
+  width: 90%;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.box-2 img {
+  width: 350px;
+  height: 250px;
+}
+
+.p {
+  font-size: 25px;
+  margin: 0 15px;
+}
+
+.envios {
+  display: flex;
+  width: 90%;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.almacen {
+  display: flex;
+  width: 90%;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.p a {
+  text-decoration: none;
+  color: rgb(243, 13, 13);
+  font-size: 20px;
+}
+
+.p a:hover {
+  cursor: pointer;
+  border-bottom: 1px solid rgb(243, 13, 13);
+}
+
+.Productos {
+  display: flex;
+  width: 90%;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+/*RESPONSIVE*/
+
+@media screen and (max-width: 1080px) {
+  .box-1 {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(max-content, 250px);
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .box-1 {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(max-content, 250px);
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .almacen {
+    display: none;
+  }
+
+  .almacen-responsive {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  .envios {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  .Productos {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .box-1 {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(max-content, 250px);
+  }
+}

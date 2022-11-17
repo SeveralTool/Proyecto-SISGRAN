@@ -1,0 +1,277 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+#panel-small {
+  display: block !important;
+}
+
+#btn-user-res {
+  color: red;
+}
+
+.contenedor-main {
+  background-color: aqua;
+  left: 5.5% !important;
+  width: 90% !important;
+}
+
+h3 {
+  margin: 20px;
+}
+
+#armados {
+  background-color: rgba(127, 255, 212, 0);
+  margin: auto;
+}
+
+.pedidos-container {
+  width: 98%;
+  height: max-content;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: max-content 100px;
+  row-gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.pedido {
+  width: 95%;
+  height: 50px;
+  margin: auto;
+  background-color: antiquewhite;
+  border-left: 2px solid rgb(26, 136, 4);
+  display: grid;
+  grid-template-rows: 50px;
+  padding: 5px;
+}
+
+.sub-titles {
+  display: grid;
+  grid-template-columns: 0.3fr 0.3fr 0.3fr 0.3fr 1fr 0.5fr 0.5fr 0.5fr;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+  margin: auto;
+}
+
+.p-info {
+  display: grid;
+  grid-template-columns: 0.3fr 0.3fr 0.3fr 0.3fr 1fr 0.5fr 0.5fr 0.5fr;
+  justify-content: center;
+  align-items: center;
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.p-info button {
+  width: 80%;
+  height: 40px;
+  padding: 5px;
+  background-color: rgb(86, 141, 62);
+  border: none;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  margin: auto;
+}
+
+#mapa-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  grid-template-rows: 70% 30%;
+  row-gap: 10px;
+  margin: 0;
+  z-index: 100;
+}
+
+#close-map {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 20px;
+  color: black;
+}
+
+#close-map:hover {
+  color: red;
+  cursor: pointer;
+}
+
+#mapa {
+  width: 100%;
+  height: 70%;
+}
+
+#info-mapa {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+
+  row-gap: 10px;
+}
+
+#datos {
+  position: absolute;
+  display: grid;
+  width: 100%;
+  top: 5%;
+  height: max-content;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+#btns {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: max-content;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+#btns button {
+  width: 200px;
+  height: 50px;
+  border-radius: 0.2rem;
+  border: none;
+  color: #000;
+  cursor: pointer;
+  margin: auto;
+}
+
+#entregado {
+  background-color: rgb(153, 243, 141);
+}
+
+#noEntregado {
+  background-color: rgb(250, 186, 102);
+}
+
+
+#nombre{
+    display: none;
+}
+
+#nombre input{
+    width: 100%;
+    height: 50px;
+    outline: none;
+    padding-left: 5px;
+    font-size: 20px;
+    border: none;
+}
+
+#nombre i{
+    display: flex;
+    width: 70px;
+    height: 50px;
+    margin-left: 15px;
+    justify-content: center;
+    align-items: center;
+    background-color: green;
+}
+
+#EndPedido{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: green;
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
+}
+
+#notPedido{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(247, 155, 51);
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#i-end{
+    position: relative;
+    margin: auto;
+    text-align: center;
+    font-size: 20px;
+}
+
+
+
+@media screen and (max-width: 900px) {
+  .contenedor-main {
+    left: 5.5% !important;
+    width: 98% !important;
+  }
+
+  .pedido {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #mapa-container {
+    left: 0;
+  }
+
+  .sub-titles {
+    display: none;
+  }
+
+  .contenedor-main {
+    left: 8% !important;
+    right: 0 !important;
+    width: 80.5% !important;
+    margin: auto;
+  }
+
+  .pedidos-container {
+    grid-template-rows: max-content;
+    margin: auto;
+  }
+
+  .pedido {
+    display: block;
+    height: max-content;
+    margin: auto;
+  }
+
+  .p-info {
+    grid-template-columns: 1fr;
+    grid-template-rows: max-content 50px;
+    row-gap: 10px;
+  }
+}

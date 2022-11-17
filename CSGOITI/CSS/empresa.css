@@ -1,0 +1,573 @@
+* {
+  border: px solid black;
+  margin: 0;
+  padding: 0;
+}
+
+.container-main {
+  left: 20%;
+  width: 80%;
+  height: 100%;
+  position: absolute;
+}
+
+#historial {
+  display: none;
+}
+
+.settings-container {
+  width: 100%;
+  height: max-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.settings {
+  width: 70%;
+  height: max-content;
+  margin: auto;
+  padding: 25px 0 25px 0;
+  display: grid;
+  grid-template-rows: repeat(7, 50px);
+  justify-content: center;
+  align-items: center;
+  row-gap: 25px;
+  border-radius: 50px;
+}
+
+.settings input {
+  padding-left: 10px;
+  width: 60%;
+  height: 40px;
+  text-align: left;
+  color: black;
+  background-color: transparent;
+  border: 0.5px solid blue;
+  border-radius: 1rem;
+  -moz-appearance: textfield;
+}
+
+.settings input:focus {
+  border-color: blue;
+}
+
+.settings div {
+  display: flex;
+}
+
+.settings p {
+  display: flex;
+  width: 70px;
+  align-items: center;
+}
+
+.settings a {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  width: 60px;
+  height: 30px;
+  text-decoration: none;
+  color: black;
+  border-radius: 1rem;
+  background-color: rgba(22, 241, 22, 0.548);
+}
+
+.settings a:hover {
+  transform: scale(1.1);
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+h3 {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  height: max-content;
+  background-color: rgba(127, 233, 123, 0);
+}
+
+#historial {
+  display: none;
+  width: 99%;
+  margin: auto;
+}
+
+#historial h2 {
+  margin-left: 10px;
+}
+
+.settings-container {
+  width: 100%;
+  height: max-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.settings {
+  width: 70%;
+  height: max-content;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: max-content 60px 60px 60px 60px 60px 60px 60px 60px;
+  justify-content: center;
+  align-items: center;
+  row-gap: 5px;
+  border-radius: 50px;
+}
+
+.settings input {
+  padding-left: 10px;
+  width: 60%;
+  height: 40px;
+  text-align: left;
+  color: black;
+  background-color: transparent;
+  border: 0.5px solid blue;
+  border-radius: 1rem;
+  -moz-appearance: textfield;
+  list-style: none;
+  text-decoration: none;
+}
+
+.settings input:focus {
+  border-color: blue;
+}
+
+.settings div {
+  display: flex;
+  margin: auto;
+  width: 500px;
+}
+
+.ids input {
+  border-color: grey;
+}
+
+.rut input {
+  border-color: grey;
+}
+
+.settings p {
+  display: flex;
+  width: 70px;
+  justify-content: right;
+  align-items: center;
+  padding-right: 10px;
+}
+
+.settings a {
+  transition: all 200ms;
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  width: 60px;
+  height: 30px;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  border-radius: 0.5rem;
+  background-color: rgb(25, 16, 82);
+}
+
+.settings a:hover {
+  transition: all 200ms;
+  width: 70px;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+#img-perfil {
+  width: max-content;
+  height: max-content;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(max-content, 60px);
+  row-gap: 5px;
+  align-items: center;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+.foto {
+  width: 60px;
+  height: 60px;
+  border-radius: 3rem;
+  border: 4px solid black;
+  margin: 0 5px 0 5px;
+}
+
+.foto:hover {
+  cursor: pointer;
+  transition: all 0.3s;
+  border-color: red;
+}
+
+/*PEDIDOS*/
+
+#pedidos {
+  display: none;
+  width: 99%;
+  margin: auto;
+}
+
+#pedidos-box {
+  width: 100%;
+  height: 100%;
+}
+
+hr {
+  width: 80%;
+  margin: auto;
+  color: #000;
+}
+
+.sin {
+  width: 100%;
+  text-align: center;
+  color: gray;
+}
+
+h4 {
+  margin-left: 20px;
+}
+
+.all-pedidos {
+  width: 95%;
+  min-width: 580px;
+  display: grid;
+  grid-template-columns: 0.2fr 1fr 0.3fr max-content;
+  column-gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  padding: 10px;
+  border-left: 5px solid black;
+}
+
+.p-switch{
+  text-align: center;
+    color: grey;
+}
+
+.all-pedidos button {
+  width: 100px;
+  height: 40px;
+  border: none;
+  list-style: none;
+  padding: 5px;
+  margin-right: 5px;
+}
+
+.all-pedidos button:hover {
+  cursor: pointer;
+}
+
+#en-curso {
+  width: 100%;
+  height: max-content;
+  margin: 20px 10px 50px 0px;
+}
+
+#pedidos-box {
+  width: 100%;
+  height: max-content;
+  margin: 20px 10px 50px 0px;
+}
+
+.Botoness {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: max-content;
+}
+
+.Botoness .p {
+  cursor: default !important;
+}
+
+.datos-pedido {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  justify-items: left;
+  background-color: transparent;
+}
+
+#datos-pedido p {
+  text-align: left;
+}
+
+#cancel:hover {
+  background-color: rgba(255, 0, 0, 0.507);
+}
+
+.pendiente {
+  background-color: rgb(235, 160, 22);
+}
+
+.armado {
+  background-color: rgba(0, 0, 255, 0.658);
+}
+
+.en.ruta {
+  background-color: yellow;
+}
+
+.Cancelado {
+  background-color: rgba(243, 42, 42, 0.856);
+}
+
+.Cancelado:hover {
+  cursor: default !important;
+}
+
+.Entregado {
+  background-color: rgba(65, 240, 65, 0.829);
+}
+
+.view-productos {
+  display: none;
+  position: absolute;
+  width: 99%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+}
+
+#close-prod-pedidos {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 40px;
+}
+
+#close-prod-pedidos:hover {
+  cursor: pointer;
+}
+
+.Productoss {
+  display: grid;
+  grid-template-columns: 40px 1fr 40px;
+  column-gap: 10px;
+  grid-template-rows: 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+.Productoss:hover {
+  background-color: rgb(228, 228, 228);
+}
+
+.Productoss img {
+  width: 40px;
+  height: 40px;
+  background-position: center;
+  background-size: cover;
+}
+
+.PRODUCTOS {
+  margin: auto;
+  position: fixed;
+  width: 50%;
+  height: max-content;
+  max-height: 500px;
+  overflow-y: scroll;
+  top: 100px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 40px;
+  row-gap: 5px;
+  background-color: #fff;
+  -webkit-box-shadow: 0px 0px 13px 1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 13px 1px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 13px 1px rgba(0, 0, 0, 0.75);
+}
+
+.delContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  z-index: 100;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.t {
+  font-size: 20px;
+}
+
+.delContainer p {
+  margin-bottom: 25px;
+  height: 30px;
+  width: max-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.delContainer .si {
+  background-color: green;
+}
+
+.delContainer .no {
+  background-color: red;
+}
+
+.delContainer .sn {
+  width: 60px;
+  border-radius: 1rem;
+  text-align: left;
+  cursor: pointer;
+}
+
+.delContainer .sn i {
+  margin-left: 5px;
+}
+
+.delCuenta {
+  margin: auto;
+  width: max-content;
+  height: 40px;
+}
+
+#delCuenta {
+  margin: auto;
+  width: max-content;
+  height: 50px;
+  margin: auto;
+  padding: 7px;
+  border: none;
+  background-color: rgba(255, 0, 0, 0.897);
+  border-radius: 0.5rem;
+  font-size: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#delCuenta i {
+  margin: 5px;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 550px) {
+  #img-perfil {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  #show-panel {
+    display: none;
+  }
+
+  .settings {
+    row-gap: 10px;
+    grid-template-rows: repeat(8, max-content);
+  }
+
+  .settings div {
+    width: 100%;
+    height: max-content;
+  }
+
+  .settings div p {
+    justify-content: left;
+  }
+
+  .settings div input {
+    width: 200px;
+  }
+
+  .rut {
+    display: grid !important;
+    grid-template-rows: 30px 50px;
+    justify-content: center;
+    height: max-content;
+  }
+
+  .nombre {
+    display: grid !important;
+    grid-template-rows: 30px 50px 30px;
+    justify-content: center;
+    height: max-content;
+  }
+
+  .apellido {
+    display: grid !important;
+    grid-template-rows: 30px 50px 30px;
+    justify-content: center;
+  }
+
+  .correo {
+    display: grid !important;
+    grid-template-rows: 30px 50px 30px;
+    justify-content: center;
+  }
+
+  .pass {
+    display: grid !important;
+    grid-template-rows: 30px 50px 30px;
+    justify-content: center;
+  }
+
+  .direccion {
+    display: grid !important;
+    grid-template-rows: 30px 50px 30px;
+    justify-content: center;
+  }
+
+  .puerta {
+    display: grid !important;
+    grid-template-rows: 30px 50px 30px;
+    justify-content: center;
+  }
+
+  .postal {
+    display: grid !important;
+    grid-template-rows: 30px 50px 30px;
+    justify-content: center;
+  }
+
+  #panel-datos {
+    left: 11.5% !important;
+  }
+
+  .all-pedidos {
+    width: 100%;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, max-content);
+    row-gap: 10px;
+    background-color: transparent;
+  }
+}

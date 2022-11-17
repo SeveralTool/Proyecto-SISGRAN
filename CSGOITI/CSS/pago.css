@@ -1,0 +1,257 @@
+*{
+    border: px solid black;
+    font-size: 15px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+p{
+    margin: 0;
+    padding: 0;
+}
+html,
+body{
+    width: 100%;
+    height: max-content;
+    padding-top: 20px;
+
+}
+
+.parent {
+    display: grid;
+    width: 60%;
+    margin: auto;
+    grid-template-columns: repeat(5, 1fr);
+    column-gap: 15px;
+    row-gap: 15px;
+    grid-template-rows: 100px 30px 50px 30px max-content max-content;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    row-gap: 5px;
+    border: 2px solid black;
+    }
+    
+    .div1 { 
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        grid-area: 1 / 4 / 2 / 6; }
+    .div2 { grid-area: 2 / 1 / 3 / 6; }
+    .div3 { grid-area: 3 / 1 / 4 / 6; }
+    .div4 { 
+        height: max-content;
+        min-height: 30px;
+        margin-bottom: 5px;
+        grid-area: 4 / 1 / 5 / 6; }
+    .div5 { grid-area: 5 / 1 / 6 / 6; }
+    .div6 { 
+        display: grid;
+        grid-template-rows: repeat(3,max-content);
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        grid-area: 6 / 4 / 7 / 6; }
+    .div7 { grid-area: 1 / 1 / 2 / 3; }
+    .div8 { grid-area: 6 / 1 / 7 / 3; }
+
+.div1{
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.div7{
+    margin: auto;
+}
+
+    img{
+        width: 60%;
+        height: 50%;
+        margin: auto;
+        padding-left: 10px;
+    }
+
+    .div2{
+        display: grid;
+        grid-template-columns: 0.5fr 0.5fr 1fr 0.5fr 0.5fr;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(236, 236, 236);
+    }
+
+    .div2 p{
+        text-align: center;
+    }
+    
+    .div3{
+        display: grid;
+        grid-template-columns: 0.5fr 0.5fr 1fr 0.5fr 0.5fr;
+        justify-content: center;
+        align-items: center;
+        
+    }
+
+    .div3 p {
+        text-align: center;
+    }
+
+    .div4{
+        display: grid;
+        grid-template-columns: 0.3fr 1fr 0.5fr 0.5fr 0.5fr;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(221, 221, 221);
+    }
+
+    .div4 p{
+        text-align: center;
+    }
+
+    .div5{
+        display: grid;
+        grid-template-columns: 0.1fr 1fr;
+        grid-template-rows: 1,1fr;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .div5 p{
+        text-align: center;
+    }
+
+    .datos{
+        display: grid;
+        grid-template-columns: 1fr 0.5fr 0.5fr 0.5fr;
+        grid-template-rows: max-content,1fr;
+        justify-content: center;
+        align-items: center;
+        row-gap: 5px;
+    }
+
+    .datos p{
+        text-align: center;
+    }
+
+    .div8{
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        grid-template-rows: 1,1fr;
+    }
+    .sub1 img{
+        width: 100px;
+        height: 80%;
+    }
+
+    .sub2 P{
+        margin: 5px 0;
+    }
+
+    #smart-button-container{
+        width: 100%;
+        margin: auto;
+        padding-top: 60px;
+    }
+
+.boton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boton a{
+ 
+    text-align: center;
+}
+
+#tot-pago-factura{
+    font-size: 15px;
+    color: rgb(14, 190, 14);
+}
+
+#window-succes{
+    display: none;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 100;
+    background-image: url('../Imagenes/pago-success.jpg');
+    object-fit: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: auto;
+}
+
+.succes{
+    margin: auto;
+    display: grid;
+    grid-template-columns: 0.1fr 1fr;
+    grid-template-rows: 1fr 10px;
+    justify-content: center;
+    align-items: center;
+    border: 0px solid green;
+    row-gap: 10px;
+    border-radius: 15px;
+}
+
+.succes p{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    
+}
+
+#icono-succes{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    font-size: 30px;
+    z-index: 100;
+    color: green;
+    justify-content: center;
+    align-items: center;
+}
+#load{
+    width: 100%;
+    height: 100%;
+    
+    background-color: rgb(88, 238, 88);
+    animation-name: load;
+    animation-duration: 5s;
+    animation-fill-mode: backwards;
+    animation-iteration-count: infinite;
+}
+
+@keyframes load {
+    0%{
+        transition: all 1;
+        width: 100%;
+    }
+
+    50%{
+        transition: all 1;
+        width: 0%;
+    }
+    
+    100%{
+        transition: all 1;
+        width: 100%;
+    }
+}
+
+
+
+@media screen and (max-width: 700px) {
+    .parent{
+        width: 100%;
+    }
+
+}

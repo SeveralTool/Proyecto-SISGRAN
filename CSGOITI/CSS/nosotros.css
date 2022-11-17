@@ -1,0 +1,259 @@
+html,
+body {
+  width: 100%;
+  min-height: max-content !important;
+  height: 100% !important;
+}
+
+h1 {
+  font-size: 40px;
+  text-align: center;
+}
+
+
+.equipo-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: max-content;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10px;
+  margin: 0 20px;
+}
+
+.card {
+  width: 1fr;
+  height: 300px;
+  background: #1b183f;
+  border-radius: 5px;
+  text-align: center;
+  color: #f0f0f0;
+  font-family: inherit;
+  z-index: 1;
+}
+
+.img {
+  display: flex;
+  margin: 60px auto 10px auto;
+  width: 75px;
+  height: 75px;
+  border: 1px solid #f0f0f0;
+  border-radius: 50%;
+  font-size: 11px;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s;
+  z-index: 99;
+}
+
+.card p {
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+h1 {
+  padding: 10px;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+svg {
+  padding: 0 5px;
+  cursor: pointer;
+}
+
+.card:hover .img {
+  transform: scale(1.1);
+  border: 1px solid #f0f0f0;
+}
+
+.card:hover h1,
+.card:hover p {
+  opacity: 1;
+}
+
+.mision-container {
+  width: 85%;
+  scroll-behavior: smooth!important;
+  height: max-content;
+  margin: auto;
+}
+
+.mision-h2 {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 4vh;
+  width: 68%;
+  color: #000;
+  text-align: left;
+  margin: 15px auto;
+}
+
+.parent {
+  display: grid;
+  width: 80%;
+  margin: auto;
+  grid-template-columns: repeat(1, 1fr);
+  padding: 10px;
+}
+
+.div1 {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    text-align: justify;
+  font-size: 20px;
+}
+
+.div1 img {
+  float: right;
+  width: 50%;
+  height: 300px;
+  cursor: pointer;
+  transition: all 1s ease-in-out;
+  margin: 10px;
+}
+
+hr{
+    margin: auto;
+    border: 2px solid rgb(24, 133, 15);
+}
+
+.more-grid {
+  width: 100%;
+  height: max-content;
+  margin: auto;
+  background-color: #1b183f00;
+}
+
+.parent2 {
+  display: grid;
+  width: 100%;
+  height: max-content;
+  margin: auto;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+}
+
+.parent2 div {
+  display: flex;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  justify-content: center;
+  align-items: center;
+  font-size: 200%;
+  text-align: justify;
+  text-justify: auto;
+}
+
+.parent2 div img {
+  width: 100%;
+  height: 100%;
+}
+
+.div11 {
+  grid-area: 1 / 1 / 2 / 2;
+}
+.div21 {
+  grid-area: 1 / 2 / 2 / 3;
+}
+.div31 {
+  grid-area: 1 / 3 / 2 / 4;
+}
+.div41 {
+  grid-area: 2 / 1 / 3 / 2;
+}
+.div51 {
+  grid-area: 2 / 2 / 3 / 3;
+}
+.div61 {
+  grid-area: 2 / 3 / 3 / 4;
+}
+.div71 {
+  grid-area: 3 / 1 / 4 / 2;
+}
+.div81 {
+  grid-area: 3 / 2 / 4 / 3;
+}
+.div91 {
+  grid-area: 3 / 3 / 4 / 4;
+}
+.div101 {
+  grid-area: 4 / 1 / 5 / 2;
+}
+.div111 {
+  grid-area: 4 / 2 / 5 / 3;
+}
+.div121 {
+  grid-area: 4 / 3 / 5 / 4;
+}
+.div131 { 
+    grid-area: 5 / 1 / 6 / 4; 
+    font-size: 6vh;
+    text-align: justify;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+    margin: auto;
+}
+.footer {
+  margin-top: 25px;
+}
+
+
+@media screen and (max-width:900px) {
+    .div1 img{
+        width: 30%;
+        height: 300px;
+        margin: 2px;
+    }
+    
+    .mision-container{
+        width: 100%;
+    }
+
+    .mision-h2{
+        width: 100%;
+        text-align: center;
+    }
+
+    hr{
+        width: 80%;
+    }
+
+    .parent{
+        width: 100%;
+        padding: 2px;
+    }
+
+    .parent2{
+        width: 100%;
+        grid-template-columns: repeat(2,1fr);
+    }
+    .div11 { grid-area: 1 / 1 / 2 / 2; }
+    .div21 { grid-area: 1 / 2 / 2 / 3; }
+    .div31 { grid-area: 2 / 2 / 3 / 3; }
+    .div41 { grid-area: 2 / 1 / 3 / 2; }
+    .div51 { grid-area: 3 / 1 / 4 / 2; }
+    .div61 { grid-area: 3 / 2 / 4 / 3; }
+    .div71 { grid-area: 4 / 2 / 5 / 3; }
+    .div81 { grid-area: 4 / 1 / 5 / 2; }
+    .div91 { grid-area: 5 / 1 / 6 / 2; }
+    .div101 { grid-area: 5 / 2 / 6 / 3; }
+    .div111 { grid-area: 6 / 2 / 7 / 3; }
+    .div121 { grid-area: 6 / 1 / 7 / 2; }
+    .div131 { 
+        grid-area: 7 / 1 / 8 / 3; }
+
+    .parent2 div{
+        font-size: 2vh;
+    }
+
+}
+
+@media screen and (max-width:600px) {
+    .div1 img{
+        display: none;
+    }
+
+    .parent{
+        width: 95%;
+    }
+
+}

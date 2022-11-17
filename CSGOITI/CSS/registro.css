@@ -1,0 +1,366 @@
+* {
+  border: px solid red;
+}
+
+html,
+body {
+  display: flex;
+  font-family: Arial, Helvetica, sans-serif;
+  background-position: 100%;
+  background-size: cover;
+  background-image: url("../Imagenes/inicio.jpg");
+  background-attachment: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -20;
+}
+
+/*LOGIN*/
+
+input {
+  outline: none !important;
+}
+
+select {
+  background-color: #ada8a800 !important;
+}
+
+option {
+  color: rgb(0, 0, 0) !important;
+}
+
+option:hover{
+  color: #000!important;
+}
+
+.back {
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  background-color: none;
+}
+
+.fondo-deg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: rgba(98, 125, 77, 1);
+  background: -moz-linear-gradient(
+    -45deg,
+    rgba(98, 125, 77, 1) 0%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  background: -webkit-gradient(
+    left top,
+    right bottom,
+    color-stop(0%, rgba(98, 125, 77, 1)),
+    color-stop(100%, rgba(0, 0, 0, 0.6))
+  );
+  background: -webkit-linear-gradient(
+    -45deg,
+    rgba(98, 125, 77, 1) 0%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  background: -o-linear-gradient(
+    -45deg,
+    rgba(98, 125, 77, 1) 0%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  background: -ms-linear-gradient(
+    -45deg,
+    rgba(98, 125, 77, 1) 0%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  background: linear-gradient(
+    135deg,
+    rgba(98, 125, 77, 1) 0%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#627d4d', endColorstr='#000000', GradientType=1 );
+  z-index: -10;
+}
+
+.registro {
+  width: 50%;
+  height: max-content;
+  min-height: max-content;
+}
+
+.link {
+  color: #ffffff;
+  font-weight: 600;
+  box-sizing: content-box;
+}
+
+.link:hover {
+  transition: all 300ms;
+  cursor: pointer;
+  color: #99ce1f;
+}
+
+i {
+  padding-top: 25px;
+  padding-left: 20px;
+  font-size: 40px;
+  color: #ffffff;
+}
+
+i:hover {
+  color: #99ce1f;
+}
+
+.contenedor {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  justify-items: center;
+  width: 100%;
+}
+
+.logo-registro {
+  display: block;
+  width: 300px;
+  width: 300px;
+  justify-content: center;
+  margin: auto;
+  box-sizing: border-box;
+}
+
+.registro-h3 {
+  font-size: 30px;
+  color: #99ce1f;
+  text-align: center;
+}
+
+.registro-h4 {
+  font-size: 100%;
+  color: rgb(192, 190, 190);
+  text-align: center;
+  padding: 4% 5% 5px 5%;
+}
+
+.selector {
+  display: flex;
+  padding: 0 5% 0 5%;
+}
+
+.usuarios li {
+  padding: 0 10px 0 10px;
+}
+
+.usuarios {
+  display: flex;
+  list-style: none;
+  width: 100%;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.sel-li {
+  color: white;
+  font-size: 20px;
+  margin: 0 5% 0 5%;
+  background-color: transparent;
+  border: 0;
+}
+
+.sel-li:hover {
+  cursor: pointer;
+}
+
+#form-registro-web {
+  display: grid;
+  width: 100%;
+  height: max-content;
+  grid-template-columns: repeat(1, minmax(100px, 1fr));
+  grid-template-rows: repeat(max-content, 1fr);
+  padding: 0 10% 5% 10%;
+  justify-items: center;
+  justify-content: center;
+}
+
+#form-registro-empresa {
+  display: none;
+  width: 100%;
+  height: max-content;
+  grid-template-columns: repeat(1, minmax(100px, 1fr));
+  grid-template-rows: repeat(max-content, 1fr);
+  padding: 0 10% 5% 10%;
+  justify-items: center;
+  justify-content: center;
+}
+
+#form-registro-huerta {
+  display: none;
+  width: 100%;
+  height: max-content;
+  grid-template-columns: repeat(1, minmax(100px, 1fr));
+  grid-template-rows: repeat(max-content, 1fr);
+  padding: 0 10% 5% 10%;
+  justify-items: center;
+  justify-content: center;
+}
+
+/*BOTON*/
+.button {
+  transition: 300ms;
+  display: flex;
+  border: none;
+  width: 200px;
+  height: 40px;
+  color: #ffffff;
+  margin: auto;
+  margin-top: 20px;
+  padding: 5px 35px 5px 35px;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  background: #99ce1f38;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button:hover {
+  width: 300px;
+  transition: 200ms;
+  color: #000000;
+  background-color: #99ce1fc5;
+}
+
+#cliente-web {
+  color: red;
+}
+
+.form-group {
+  position: relative;
+  display: inline;
+  padding: 20px 0 0;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  width: 100%;
+  max-width: 100%;
+  text-align: center;
+  align-items: center;
+}
+
+.form-field {
+  font-family: Arial, Helvetica, sans-serif;
+  width: 50%;
+  border: none;
+  border-bottom: 2px solid rgb(133, 131, 131);
+  color: rgb(255, 255, 255);
+  outline: none;
+  font-size: 17px;
+  padding: 5px 0;
+  background-color: transparent;
+  transition: border-color 0.2s;
+}
+
+.form-field::placeholder {
+  color: transparent;
+}
+
+.form-field:placeholder-shown ~ .form-label {
+  font-size: 17px;
+  cursor: text;
+  top: 20px;
+}
+
+.form-label {
+  position: absolute;
+  top: 0;
+  left: 25%;
+  display: block;
+  transition: 0.5s;
+  font-size: 120%;
+  color: #9b9b9b;
+  pointer-events: none;
+  text-align: left;
+}
+
+.form-field:hover {
+  cursor: text;
+}
+
+select:hover {
+  cursor: pointer !important;
+}
+
+.form-field:focus {
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, #99ce1f, #4e6810);
+  border-image-slice: 1;
+  background-color: transparent;
+}
+
+.form-field:focus ~ .form-label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 17px;
+  color: #99ce1f;
+  font-weight: 700;
+}
+
+.form-field:required,
+.form-field:invalid {
+  box-shadow: none;
+}
+
+.password {
+  margin-bottom: 20px;
+}
+
+.password p {
+  color: #9b9b9b;
+  margin-top: 2%;
+  font-size: 15px;
+  text-align: center;
+}
+
+.correo-p {
+  display: none;
+  color: red;
+}
+
+.h4-red {
+  display: block;
+  padding-top: 30px;
+  font-size: 15px;
+  color: rgb(238, 36, 36);
+  text-align: center;
+}
+
+#huerta {
+  height: 100% !important;
+}
+
+/* RESPONSIVE SIN TERMINAR*/
+@media (max-width: 810px) {
+  body {
+    background-image: url("../Imagenes/Lechugas.jpg");
+    width: 100%;
+  }
+
+  .fondo-deg {
+    width: 100%;
+  }
+
+  .registro {
+    width: 100%;
+    height: max-content;
+  }
+
+  .form-field {
+    width: 80%;
+  }
+
+  .form-label {
+    width: 80%;
+    left: 10%;
+  }
+}
