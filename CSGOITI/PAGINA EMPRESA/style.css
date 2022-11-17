@@ -1,0 +1,347 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+@font-face {
+    font-family: 'pro';
+    src: url(Fuentes/SourceSerifPro-Bold.ttf);
+}
+
+header{
+    height: 100px;
+    background: rgb(0, 0, 0);
+    padding: 0 50px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo{
+    text-transform: uppercase;
+    color: rgb(255, 255, 255);
+    font-weight: 200;
+    font-size: 40px;
+    font-family: pro;
+}
+
+.menu a{
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0 10px;
+    transition: 0.4s;
+    left: 100%;
+}
+
+.mostrar-menu,
+.esconder-menu{
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+    transition: 0.4s;
+}
+
+.mostrar-menu{
+    order: 1;
+
+}
+
+.menu a:hover,
+.mostrar-menu:hover,
+.esconder-menu:hover{
+    color: #6cc091;
+}
+#check{
+    display: none;
+}
+
+#banner{
+    padding: 0 50px;
+    background-image: url(imagenes/banner.png);
+    height: 45vh;
+    background-size: cover;
+    background-position: center;
+}
+#banner::before{
+    content: '';
+    background: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    width: 100%;
+    height: 45vh;
+    left: 0;
+}
+
+.contenido-banner{
+    position: relative;
+    color: #fff;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contenido-banner h3{
+    font-size: 30px;
+    font-weight: 400;
+    padding: 10px 0px;
+}
+
+.contenido-banner  h3 span{
+    font-weight: 600;
+    color: #000000;
+}
+
+.boton-contacto{
+    margin-top: 40px;
+    text-decoration: none;
+    color: #fff;
+    border: 2px solid #0e2f02;
+    padding: 20px 40px;
+    align-self: baseline;
+    transition: all 0.4s;
+}
+
+.boton-contacto:hover{
+    background: #0e2f02
+
+}
+
+.nuestro-equipo{
+    position: relative;
+    width: 100%;
+    height: 15vh;
+}
+
+.nuestro-equipo h3{
+    text-align: center;
+    font-size: 60px;
+    font-weight: 400;
+    padding: 50px 0px;
+}
+
+.nuestro-equipo  h3 span{
+    font-weight: 600;
+    color: #000000;
+}
+
+#personas{
+    padding: 50px 50px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+#personas img{
+    border-radius: 100%;
+}
+
+#personas div{
+    padding: 30px 30px;  
+}
+
+#personas div h4{
+    color: #4d4d5c;
+    font-size: 20px;
+    margin: 15px 0px;
+}
+
+#personas div p{
+    color: #4d4d5c87;
+    font-size: 18px;
+}
+
+.boton-saber-mas{
+    display: inline-block;
+    text-decoration: none;
+    color: #6cc091;
+    padding: 10px 30px;
+    border: 3px solid #6cc091;
+    border-radius: 30px;
+    margin-top: 15px;
+    transition: all 0.4s;
+}
+
+.boton-saber-mas:hover{
+    background:#6cc091 ;
+    color: #fff;
+}
+
+#nosotros{
+    padding: 0px 50px;
+    background: rgba(255, 255, 255, 0.6) ;
+}
+
+.contenido-nosotros{
+    padding:50px 50px 0px 50px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.contenido-nosotros div{
+    flex: 1;
+    margin: 20px 0px;
+    border-right: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+#icono-escudo{
+    border: none;
+}
+
+.contenido-nosotros div i{
+    color: rgb(0, 0, 0);
+}
+
+.contenido-nosotros div h6{
+    color: #000000;
+    font-size: 20px;
+    font-weight: 100;
+    margin: 10px 0px;
+}
+
+.contenido-nosotros div p{
+    color: #000000;
+    font-size: 15px;
+}
+
+#contacto{
+    background: #000000;
+    padding: 50px 0px;
+    color: white;
+}
+#contacto h4{
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+#contacto form{
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.datos-form{
+    display: flex;
+}
+.datos-form div{
+    padding: 10px;
+    flex: 1;
+}
+form label{
+    display: block;
+    margin-bottom: 10px;
+}
+
+form input,
+form textarea{
+    background: #000000;
+    border-radius: 10px;
+    border: 2px solid white;
+    padding: 10px 5px;
+    outline: 0;
+    color: #fff;
+    width: 100%;
+}
+form input :focus,
+form textarea:focus{
+    border-color: rgb(124, 124, 124);
+    box-shadow: 0 0 0 1px rgb(124, 124, 124);
+}
+
+form input::placeholder,
+form textarea::placeholder{
+    color: #fff;
+}
+
+.boton-formulario .boton-saber-mas{
+    display: block;
+    border: 1px solid white;
+    color: #fff;
+    text-align: center;
+    transition: 0.4s;
+}
+
+.boton-formulario .boton-saber-mas:hover{
+    background: rgb(183, 183, 183);
+}
+
+.mensaje{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+footer{
+    background: #000000;
+    color: #ccc4ac;
+    text-align: center;
+    padding: 10px 0;
+}
+
+@media(max-width: 768px){
+    .mostrar-menu,
+    .esconder-menu{
+        display: block;
+    }
+
+    .menu{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #4d4d5c;
+        left: 0;
+        right: -100%;
+        top: 0;
+        text-align: center;
+        padding: 100px 0px;
+        z-index: 100;
+        transition: 0.8s;
+    }
+
+    .menu a{
+        display: block;
+        padding: 20px;
+       
+    }
+    .esconder-menu{
+        position: absolute;
+        top: 40px;
+        right: 40px;
+    }
+    
+    #check:checked ~ .menu{
+        right: 0;
+    }
+
+    .nuestro-equipo{
+        height: 5vh;
+    }
+
+    .nuestro-equipo h3{
+        text-align: center;
+        font-size: 40px;
+        font-weight: 400;
+        padding: 40px 0px;
+    }
+    
+
+    #personas{
+        flex-direction: column;
+     
+    }
+
+    .contenido-nosotros{
+        flex-direction: column;
+    }
+
+    .contenido-nosotros div{
+        border: none;
+    }
+   
+
+    .datos-form{
+        flex-direction: column;
+    }
+}
