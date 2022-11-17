@@ -1,0 +1,194 @@
+                                                                            CONSULTAS OBLIGATORIAS
+
+1)
+(REVISAR)
+SELECT vegetal.nombre_vegetal, calendario.fecha_inicio
+FROM vegetal, calendario
+WHERE calendario.id_vegetal = vegetal.id_vegetal AND MONTH(CURRENT_DATE()) = MONTH(calendario.fecha_inicio  );
+
+2)
+SELECT vegetal.nombre_vegetal, variedad.nombre_variedad, CURRENT_DATE() AS 'FechaActual'
+FROM vegetal, calendario, cultiva, variedad 
+WHERE CURRENT_DATE>=DATE_ADD(cultiva.fecha_cultivo,INTERVAL calendario.tiempo_cosecha DAY) AND cultiva.id_vegetal=calendario.id_vegetal AND vegetal.id_vegetal=cultiva.id_vegetal AND variedad.id_variedad = cultiva.id_variedad;
+
+3) 
+SELECT huerta.nombre_huerta, cultiva.id_huerta,vegetal.id_vegetal,  vegetal.nombre_vegetal,variedad.id_variedad,variedad.nombre_variedad , cosecha.cantidad-cultiva.cantidad as diferencia
+from cultiva, vegetal, cosecha , variedad, huerta
+WHERE vegetal.id_vegetal = cosecha.id_vegetal AND vegetal.id_vegetal = cultiva.id_vegetal
+AND cultiva.id_huerta = huerta.id_huerta AND cosecha.id_huerta = huerta.id_huerta AND year(current_date()) = year(cosecha.fecha_cosecha) and cultiva.id_vegetal = cosecha.id_vegetal AND cosecha.id_variedad = cultiva.id_variedad AND variedad.id_vegetal= vegetal.id_vegetal AND variedad.id_variedad = cosecha.id_variedad and cultiva.estado_cultivo="Cosechado";
+
+
+//PARA PROFIT/LOSS DE DIRECTIVO
+SET @MetaChica = '5000';
+SET @MetaMediana = '8000';
+SELECT (SELECT SUM(cultiva.cantidad) FROM cultiva) AS 'totalCultivado', (SELECT SUM(cosecha.cantidad) FROM cosecha) AS 'totalCosechado', 
+(SELECT SUM(cosecha.cantidad) FROM cosecha, variedad WHERE variedad.unidad_variedad = 'atado' AND cosecha.id_variedad = variedad.id_variedad) AS 'totalATADOScosechados',
+(SELECT SUM(cosecha.cantidad) FROM cosecha, variedad WHERE variedad.unidad_variedad = 'kg' AND cosecha.id_variedad = variedad.id_variedad) AS 'totalkgcosechados',
+(SELECT SUM(cosecha.cantidad) FROM cosecha, variedad WHERE variedad.unidad_variedad = 'unidad' AND cosecha.id_variedad = variedad.id_variedad) AS 'totalUNIDADEScosechadas',
+(SELECT SUM(cultiva.cantidad) FROM cultiva, variedad WHERE variedad.unidad_variedad = 'unidad' AND cultiva.id_variedad = variedad.id_variedad) AS 'totalUNIDADESCultivadas',
+(SELECT SUM(cultiva.cantidad) FROM cultiva, variedad WHERE variedad.unidad_variedad = 'kg' AND cultiva.id_variedad = variedad.id_variedad) AS 'totalKGCultivados',
+(SELECT SUM(cultiva.cantidad) FROM cultiva, variedad WHERE variedad.unidad_variedad = 'atado' AND cultiva.id_variedad = variedad.id_variedad) AS 'totalATADOSCultivados',
+(SELECT SUM(cosecha.cantidad) FROM cosecha WHERE YEAR(cosecha.fecha_cosecha) = YEAR(CURRENT_DATE()) ) - (SELECT SUM(cultiva.cantidad) FROM cultiva WHERE YEAR(cultiva.fecha_cultivo) = YEAR(CURRENT_DATE()) AND cultiva.estado_cultivo = 'cosechado') AS 'diferenciaProduccion',- (SELECT SUM(cosecha.cantidad) FROM cosecha, huerta WHERE YEAR(cosecha.fecha_cosecha) = YEAR(CURRENT_DATE()) AND cosecha.id_huerta = huerta.id_huerta AND huerta.tamaño_huerta = 'pequeña') - @MetaChica AS 'Produccion/MetasHuertaChica', (SELECT SUM(cosecha.cantidad) FROM cosecha, huerta WHERE YEAR(cosecha.fecha_cosecha) = YEAR(CURRENT_DATE()) AND cosecha.id_huerta = huerta.id_huerta AND huerta.tamaño_huerta = 'mediana') - @MetaMediana AS 'Produccion/MetasHuertaMediana';
+
+4) 
+(CONSULTA TODAS LAS HUERTAS)
+SELECT SUM(cosecha.cantidad) AS COSECHATOTAL 
+FROM cosecha, huerta 
+WHERE MONTH(CURRENT_DATE()) = MONTH(cosecha.fecha_cosecha) AND cosecha.id_huerta = huerta.id_huerta
+
+(CONSULTA POR HUERTA)
+SELECT huerta.nombre_huerta , SUM(cosecha.cantidad) FROM cosecha, huerta 
+WHERE MONTH(CURRENT_DATE()) = MONTH(cosecha.fecha_cosecha) AND cosecha.id_huerta = huerta.id_huerta GROUP BY cosecha.id_huerta
+
+5)
+SELECT esta.nº_pedido, MAX(esta.id_estado_pedido), estado_pedido.nombre_estado_pedido
+FROM esta, estado_pedido
+WHERE (SELECT MAX(esta.id_estado_pedido) FROM esta) AND esta.id_estado_pedido = estado_pedido.id_estado_pedido
+GROUP by esta.nº_pedido;
+
+6) 
+SELECT cliente_web.apellido, cliente.direccion
+FROM pedido, cliente_web, cliente
+WHERE  DAY(CURRENT_DATE()) = DAY(pedido.fecha_entrega_pedido) AND pedido.nº_cliente = cliente.nº_cliente AND pedido.nº_cliente = cliente_web.nº_cliente
+UNION
+SELECT cliente_empresa.nombre, cliente.direccion
+FROM pedido, cliente_empresa, cliente
+WHERE  DAY(CURRENT_DATE()) = DAY(pedido.fecha_entrega_pedido) AND pedido.nº_cliente = cliente.nº_cliente AND pedido.nº_cliente = cliente_empresa.nº_cliente;
+
+7)
+SELECT vegetal.nombre_vegetal, variedad.nombre_variedad, stock.cantidad_stock
+FROM variedad, vegetal, stock
+WHERE vegetal.id_vegetal = variedad.id_vegetal AND stock.id_variedad = variedad.id_variedad;
+
+8)
+CREATE VIEW total AS
+SELECT pedido.nº_pedido, vegetal.nombre_vegetal, variedad.nombre_variedad, detalle.cantidad, detalle.precio_unidad, detalle.precio_subtotal
+FROM pedido, detalle, vegetal, variedad
+WHERE  MONTH(CURRENT_DATE()) = MONTH(pedido.fecha_entrega_pedido) AND variedad.id_vegetal = vegetal.id_vegetal AND
+detalle.id_vegetal = variedad.id_vegetal AND detalle.id_variedad = variedad.id_variedad AND pedido.nº_pedido = detalle.nº_pedido;
+
+9) 
+SELECT total.nº_pedido,SUM(precio_subtotal) AS total
+from total, pedido
+WHERE  MONTH(CURRENT_DATE()) = MONTH(pedido.fecha_entrega_pedido) AND total.nº_pedido=pedido.nº_pedido GROUP BY total.nº_pedido;
+
+10)
+SELECT pedido.nº_pedido
+FROM pedido, esta
+WHERE DAY(CURRENT_DATE()) = DAY(pedido.fecha_entrega_pedido) AND esta.id_estado_pedido='3' AND esta.nº_pedido=pedido.nº_pedido;
+
+
+
+                                                                        CONSULTAS OPCIONALES
+
+1)
+SELECT cliente_web.nombre , cliente.nº_cliente , cliente.estado_cliente
+FROM cliente_web, cliente
+WHERE cliente_web.nº_cliente=cliente.nº_cliente AND (cliente.estado_cliente="pendiente" OR cliente.estado_cliente="rechazado")
+UNION
+SELECT cliente_empresa.nombre , cliente.nº_cliente, cliente.estado_cliente
+FROM cliente_empresa, cliente
+WHERE cliente_empresa.nº_cliente=cliente.nº_cliente AND (cliente.estado_cliente="pendiente" OR cliente.estado_cliente="rechazado");
+
+
+2)
+SELECT cliente_web.nombre, esta.nº_cliente, esta.nº_pedido, esta.fecha_inicio_estado, esta.fecha_final_estado, estado_pedido.nombre_estado_pedido
+FROM esta, estado_pedido, cliente_web
+WHERE esta.nº_pedido = '7' AND esta.id_estado_pedido = estado_pedido.id_estado_pedido AND cliente_web.nº_cliente = esta.nº_cliente GROUP BY esta.id_estado_pedido ASC
+UNION
+SELECT cliente_empresa.nombre, esta.nº_cliente, esta.nº_pedido, esta.fecha_inicio_estado, esta.fecha_final_estado, estado_pedido.nombre_estado_pedido
+FROM esta, estado_pedido, cliente_empresa
+WHERE esta.nº_pedido = '12' AND esta.id_estado_pedido = estado_pedido.id_estado_pedido AND cliente_empresa.nº_cliente = esta.nº_cliente GROUP BY esta.id_estado_pedido ASC;
+
+3)
+SELECT vegetal.nombre_vegetal,  variedad.nombre_variedad, SUM(cosecha.cantidad)
+FROM vegetal, cosecha, variedad
+WHERE vegetal.id_vegetal=cosecha.id_vegetal AND YEAR(cosecha.fecha_cosecha)=2022 and cosecha.id_variedad = variedad.id_variedad GROUP by cosecha.id_variedad;
+
+
+4)
+SELECT vegetal.nombre_vegetal, SUM( detalle.cantidad) as 'vecesPedidas' 
+FROM  vegetal, detalle, pedido 
+WHERE  detalle.id_vegetal=vegetal.id_vegetal AND pedido.nº_pedido=detalle.nº_pedido AND YEAR(pedido.fecha_realizado)=2022 GROUP BY detalle.id_vegetal 
+ORDER BY  detalle.cantidad DESC;
+
+
+
+
+
+5)
+SELECT huerta.nombre_huerta, SUM(cosecha.cantidad) as 'CantidadDeProduccion'
+FROM huerta, cosecha
+WHERE huerta.id_huerta=cosecha.id_huerta AND YEAR(cosecha.fecha_cosecha)=2022 GROUP BY cosecha.id_huerta
+ORDER BY cosecha.id_huerta ASC LIMIT 0,1;
+
+
+6) 
+SELECT huerta.id_huerta, huerta.nombre_huerta,SUM(cosecha.cantidad) as 'CantidadDeCultivos'
+FROM huerta,cosecha
+WHERE huerta.id_huerta=cosecha.id_huerta AND YEAR(cosecha.fecha_cosecha)=YEAR(CURRENT_DATE()) GROUP BY huerta.id_huerta;
+
+7)
+SELECT vendedor.nombre_vendedor,vegetal.nombre_vegetal,vende.cantidad
+FROM vendedor,vende,vegetal
+WHERE vende.id_vegetal=vegetal.id_vegetal AND vendedor.nombre_vendedor=vende.nombre_vendedor  AND MONTH(vende.fecha_venta)=MONTH(CURRENT_DATE - INTERVAL 1 MONTH);
+
+8)
+SELECT pedido.nº_pedido, estado_pedido.nombre_estado_pedido
+FROM pedido,esta,estado_pedido
+WHERE pedido.nº_pedido=esta.nº_pedido AND esta.id_estado_pedido=estado_pedido.id_estado_pedido AND esta.id_estado_pedido=6 AND DAY(esta.fecha_inicio_estado)=DAY(CURRENT_DATE - INTERVAL 1 DAY);
+
+9)
+SELECT vegetal.nombre_vegetal, asocia.id_vegetal_socio
+FROM asocia, vegetal
+WHERE vegetal.id_vegetal = asocia.id_vegetal;
+
+10) 
+SELECT  cliente_empresa.nombre, pedido.nº_pedido
+FROM pedido,cliente_empresa,esta
+WHERE pedido.nº_pedido=esta.nº_pedido AND pedido.nº_cliente=cliente_empresa.nº_cliente AND esta.id_estado_pedido=7 AND MONTH(pedido.fecha_realizado)=MONTH(CURRENT_DATE())
+UNION
+SELECT  cliente_web.nombre, pedido.nº_pedido
+FROM pedido,cliente_web,esta
+WHERE pedido.nº_pedido=esta.nº_pedido AND pedido.nº_cliente=cliente_web.nº_cliente AND esta.id_estado_pedido=7 AND MONTH(pedido.fecha_realizado)=MONTH(CURRENT_DATE());
+
+
+
+
+
+
+11) 
+SELECT vegetal.nombre_vegetal,vende.nombre_vendedor,SUM(vende.cantidad)
+FROM vende, vegetal
+WHERE YEAR(vende.fecha_venta)=YEAR(CURRENT_DATE()) AND vegetal.id_vegetal=vende.id_vegetal GROUP BY vende.nombre_vendedor;
+
+
+12)
+SELECT huerta.id_huerta, huerta.nombre_huerta,vegetal.nombre_vegetal,SUM(cosecha.cantidad) as 'LechugasCosechadas'
+FROM huerta, cosecha, vegetal
+WHERE huerta.id_huerta=cosecha.id_huerta AND cosecha.id_vegetal=12 AND YEAR(cosecha.fecha_cosecha)=YEAR(CURRENT_DATE()) AND vegetal.id_vegetal=cosecha.id_vegetal;
+
+
+13)
+SELECT cliente_empresa.nombre as 'Empresa', COUNT(detalle.nº_pedido) as 'PedidosTotales'
+FROM pedido, cliente_empresa, detalle
+WHERE pedido.nº_cliente = cliente_empresa.nº_cliente AND pedido.nº_pedido = detalle.nº_pedido AND MONTH(pedido.fecha_realizado)= 11;
+
+14)
+CREATE VIEW metas AS
+SELECT huerta.id_huerta, huerta.nombre_huerta , SUM(cosecha.cantidad) as ‘suma’ FROM cosecha, huerta 
+WHERE MONTH(CURRENT_DATE()) = MONTH(cosecha.fecha_cosecha) AND cosecha.id_huerta = huerta.id_huerta GROUP BY cosecha.id_huerta
+
+SET @metasChica = 4000;
+SET @metasMediana = 5000;
+SELECT cosecha.id_huerta, metas.nombre_huerta, metas.suma, huerta.tamaño_huerta
+FROM metas, cosecha, huerta
+WHERE metas.suma >= @metasmediana AND YEAR(cosecha.fecha_cosecha)
+= YEAR(CURRENT_DATE()) AND huerta.tamaño_huerta = 'mediana' AND huerta.id_huerta = cosecha.id_huerta AND metas.id_huerta = huerta.id_huerta GROUP by metas.id_huerta
+UNION
+SELECT cosecha.id_huerta, metas.nombre_huerta, metas.suma, huerta.tamaño_huerta
+FROM metas, cosecha, huerta
+WHERE metas.suma >= @metasChica AND YEAR(cosecha.fecha_cosecha)
+= YEAR(CURRENT_DATE()) AND huerta.tamaño_huerta = 'pequeña' AND huerta.id_huerta = cosecha.id_huerta AND metas.id_huerta = huerta.id_huerta GROUP by metas.id_huerta;
+
+
