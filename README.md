@@ -1,2 +1,5 @@
 # Proytecto-Final
-todo lo del proyecto de 3º ITI
+Codigo Fuente SISGRAN
+
+
+Derechos reservados por @SeveralTool creador y desarrollador del software.
