@@ -25,7 +25,7 @@ Se aceptan consejos o contribuciones.
 - [SISGRAN IG](https://instagram.com/sisgranuy?igshid=YmM0MjE2YWMzOA==)
 
 ## Licencia
-MIT
+GNU AFFERO GENERAL PUBLIC LICENSE
 
 ## Agradecimientos
 Se agradece a todo el equipo de desarrollo.
