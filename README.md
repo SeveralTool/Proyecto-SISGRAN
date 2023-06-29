@@ -1,7 +1,7 @@
 # [Nombre del Proyecto/Portafolio]
 
 ## Descripción
-Este fue mi mayor proyecto. Es una aplicación web para el control y
+Es una aplicación web para el control y
 administración de un sistema de huertas ecológicas. Cuenta con
 acceso y registro funcional con control de acceso por administración,
 sistema de cosecha y cultivos, con control de tiempos automáticos,
